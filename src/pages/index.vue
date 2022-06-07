@@ -1,17 +1,16 @@
 <template>
   <div class="grid flex h-screen justify-center items-center">
-    <transition name="page">
-      <welcome-screen/>
-    </transition>
+    <WelcomeScreen />
   </div>
 </template>
 
 <script>
+import WelcomeScreen from './../components/WelcomeScreen'
+
 export default {
   name: 'IndexPage',
+  components: {
+    WelcomeScreen,
+  },
 }
 </script>
-<style>
-  .home-enter-active, .home-leave-active { transition: opacity .5s; }
-  .home-enter, .home-leave-active { opacity: 0; }
-</style>
