@@ -1,7 +1,7 @@
 <template>
   <div class="text-center select-none">
     <div class="mb-4">
-      <div v-longpress="addValue" @touchstart="touchStart">
+      <div v-longpress="addValue" v-haptic.success @touchstart="touchStart">
         <img
           class="m-auto w-32 md:w-42 lg:w-48 pointer-events-none"
           src="cloche.png"
