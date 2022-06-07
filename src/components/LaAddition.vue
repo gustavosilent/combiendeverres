@@ -2,7 +2,10 @@
   <div class="text-center select-none">
     <div class="mb-4">
       <div>
-        <img class="m-auto w-32 md:w-42 lg:w-48" src="argent.png" />
+        <img
+          class="m-auto w-32 md:w-42 lg:w-48 pointer-events-none"
+          src="argent.png"
+        />
         <h1 class="text-2xl mt-4">
           Vous doit payer {{ store.getCount }} verre(s)
         </h1>
