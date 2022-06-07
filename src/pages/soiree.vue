@@ -1,6 +1,6 @@
 <template>
   <div class="grid flex h-screen p-5">
-    <div class="justify-between items-start flex flex-row h-14">
+    <div class="justify-between flex flex-row h-14">
       <NuxtLink class="p-1" to="/"
         ><img class="m-auto w-8" src="verre.png" /><span
           class="text-xs font-medium"

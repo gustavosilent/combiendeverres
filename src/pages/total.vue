@@ -1,6 +1,6 @@
 <template>
   <div class="grid flex h-screen p-5">
-    <div class="items-start flex flex-row h-14">
+    <div class="flex flex-row h-14">
       <NuxtLink to="/soiree" class="p-1"
         ><img class="m-auto w-8" src="cloche.png" /><span
           class="text-xs font-medium"

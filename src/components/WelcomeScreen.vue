@@ -1,6 +1,5 @@
 <template>
   <div class="text-center select-none">
-    <div class="h-14"></div>
     <div v-longpress="startSection" class="mb-4">
       <img
         class="m-auto w-32 md:w-42 lg:w-48 pointer-events-none"
@@ -12,11 +11,20 @@
   </div>
 </template>
 <script>
+import { useCounterStore } from './../store/counter'
+
 export default {
   name: 'WelcomeScreen',
 
+  data() {
+    return {
+      store: useCounterStore(),
+    }
+  },
+
   methods: {
     startSection() {
+      this.store.emptyCount()
       this.$router.push({ path: '/soiree' })
     },
   },

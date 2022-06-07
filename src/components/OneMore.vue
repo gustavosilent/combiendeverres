@@ -32,11 +32,6 @@ export default {
     }
   },
 
-  mounted() {
-    // empty store
-    this.store.emptyCount()
-  },
-
   methods: {
     touchStart(touchEvent) {
       if (touchEvent.changedTouches.length !== 1) return
