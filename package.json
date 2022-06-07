@@ -28,6 +28,7 @@
     "sass-rem": "^3.0.0",
     "vitest": "^0.13.1",
     "vue": "^2.6.14",
+    "vue-haptic": "^1.2.0",
     "vue-server-renderer": "^2.6.14",
     "vue-template-compiler": "^2.6.14",
     "webpack": "^4.46.0"
