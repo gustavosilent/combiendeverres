@@ -24,12 +24,8 @@ export default {
 
   // Styled resources
   styleResources: {
-      
-    scss: [
-      '~~/node_modules/sass-rem/_rem.scss',
-      '~/assets/scss/*.scss',
-    ],
-    hoistUseStatements: true // Hoists the "@use" imports. Applies only to "sass", "scss" and "less". Default: false.
+    scss: ['~~/node_modules/sass-rem/_rem.scss', '~/assets/scss/*.scss'],
+    hoistUseStatements: true, // Hoists the "@use" imports. Applies only to "sass", "scss" and "less". Default: false.
   },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -81,8 +77,8 @@ export default {
     },
     icons: {
       fileName: 'icon.png',
-      sizes: [64, 120, 144, 152, 192, 384, 512]
-    }
+      sizes: [64, 120, 144, 152, 192, 384, 512],
+    },
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
