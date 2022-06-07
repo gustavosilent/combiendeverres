@@ -1,5 +1,5 @@
 <template>
-  <div class="cdv-default-layout">
+  <div class="cdv-default-layout overflow-y-hidden">
     <nuxt></nuxt>
   </div>
 </template>
@@ -17,7 +17,7 @@ export default {
 .cdv-default-layout {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100vh;
 
   &__content {
     display: flex; // allow pages to have full height
