@@ -71,7 +71,7 @@ export default {
     manifest: {
       lang: 'en',
       name: 'Combien de Verres',
-      short_name: 'CDV',
+      short_name: 'Apéro time!',
       description: 'Combien de verres ta bu ce soirée?',
       theme_color: '#eb5252',
       background_color: '#3F3844',
