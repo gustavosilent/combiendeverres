@@ -1,7 +1,7 @@
 <template>
   <div class="text-center select-none">
     <div class="mb-4">
-      <div v-longpress="addValue" v-haptic.success @touchstart="touchStart">
+      <div v-longpress="addValue" @touchstart="touchStart">
         <img
           class="m-auto w-32 md:w-42 lg:w-48 pointer-events-none"
           src="cloche.png"
@@ -75,9 +75,11 @@ export default {
       } else if (posXStart > posXEnd) {
         this.units--
       }
+      window.navigator?.vibrate?.([10, 10])
       this.advanced = true
     },
     addValue() {
+      window.navigator?.vibrate?.([50, 200, 50, 200])
       this.store.addCount(this.units)
       this.units = 0
     },
