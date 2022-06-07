@@ -2,9 +2,8 @@
   <div class="grid flex h-screen p-5">
     <div
       v-if="store.getCount > 0"
-      v-haptic.success
       class="justify-end flex flex-row h-14"
-      @click="$router.push({ path: '/soiree' })"
+      @click="restoreRoute('/soiree')"
     >
       <div class="p-1">
         <img class="m-auto w-8" src="argent.png" />
@@ -31,6 +30,12 @@ export default {
     return {
       store: useCounterStore(),
     }
+  },
+  methods: {
+    restoreRoute(r) {
+      window.navigator?.vibrate?.([50, 200, 50, 200])
+      this.$router.push({ path: r })
+    },
   },
 }
 </script>
