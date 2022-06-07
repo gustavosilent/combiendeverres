@@ -7,6 +7,7 @@ export const useCounterStore = defineStore('storeCounter', {
   actions: {
     addCount(v) {
       this.counter += v
+      if (this.counter < 0) this.emptyCount()
     },
     emptyCount() {
       this.counter = 0
