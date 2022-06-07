@@ -1,9 +1,9 @@
-import { mount } from '@vue/test-utils'
+import { shallowMount } from '@vue/test-utils'
 import IndexPage from '@/src/pages/index.vue'
 
 describe('Index Page', () => {
   test('is a Vue instance', () => {
-    const wrapper = mount(IndexPage)
+    const wrapper = shallowMount(IndexPage)
     expect(wrapper.vm).toBeTruthy()
   })
 })

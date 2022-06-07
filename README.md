@@ -1,5 +1,9 @@
 # combiendeverres
 
+## Pwa Setup
+
+[https://gustavosilent.github.io/combiendeverres](https://gustavosilent.github.io/combiendeverres)
+
 ## Build Setup
 
 ```bash
@@ -66,3 +70,7 @@ More information about the usage of this directory in [the documentation](https:
 This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
 
 More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
+
+### `iconspack`
+
+// icons pack: https://www.flaticon.com/fr/packs/hotel-service-55
