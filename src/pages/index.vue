@@ -2,6 +2,7 @@
   <div class="grid flex h-screen p-5">
     <div
       v-if="store.getCount > 0"
+      v-haptic.success 
       class="justify-end flex flex-row h-14"
       @click="$router.push({ path: '/soiree' })"
     >
