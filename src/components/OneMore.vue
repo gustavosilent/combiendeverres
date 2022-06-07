@@ -1,13 +1,10 @@
 <template>
-  <div class="text-center">
+  <div class="text-center select-none">
     <div class="mb-4">
       <div v-longpress="addValue" @touchstart="touchStart">
-        <img
-          class="m-auto w-32 md:w-42 lg:w-48 pointer-events-none"
-          src="cloche.png"
-        />
-        <h1 class="text-2xl mt-4 pointer-events-none">{{ units }} verre(s)</h1>
-        <span class="text-xs mt-4 text-gray-400 pointer-events-none">{{
+        <img class="m-auto w-32 md:w-42 lg:w-48" src="cloche.png" />
+        <h1 class="text-2xl mt-4">{{ units }} verre(s)</h1>
+        <span class="text-xs mt-4 text-gray-400">{{
           `${
             units === 0
               ? 'Swipe(L/R) pour adjuster'
