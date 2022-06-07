@@ -8,13 +8,15 @@
         />
         <div class="flex mt-4 justify-center">
           <div class="flex items-center text-xl">
-            <h1 v-if="!isMobile" class="text-2xl">{{ units }} verre(s)</h1>
+            <h1 class="text-2xl">{{ units }} verre(s)</h1>
             <span
+              v-if="!isMobile"
               class="bg-white border border-gray-400 rounded leading-none ml-2 w-6 h-6"
               @click="units--"
               >-</span
             >
             <span
+              v-if="!isMobile"
               class="bg-white border border-gray-400 rounded leading-none ml-2 w-6 h-6"
               @click="units++"
               >+</span
