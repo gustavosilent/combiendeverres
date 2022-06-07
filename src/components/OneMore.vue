@@ -6,11 +6,25 @@
           class="m-auto w-32 md:w-42 lg:w-48 pointer-events-none"
           src="cloche.png"
         />
-        <h1 class="text-2xl mt-4">{{ units }} verre(s)</h1>
+        <div class="flex mt-4 justify-center">
+          <div class="flex items-center text-xl">
+            <h1 v-if="!isMobile" class="text-2xl">{{ units }} verre(s)</h1>
+            <span
+              class="bg-white border border-gray-400 rounded leading-none ml-2 w-6 h-6"
+              @click="units--"
+              >-</span
+            >
+            <span
+              class="bg-white border border-gray-400 rounded leading-none ml-2 w-6 h-6"
+              @click="units++"
+              >+</span
+            >
+          </div>
+        </div>
         <span class="text-xs mt-4 text-gray-400">{{
           `${
             units === 0
-              ? 'Swipe(L/R) pour adjuster'
+              ? `${isMobile ? 'Swipe(L/R)' : 'Click'} pour adjuster`
               : 'LongPress(.) pour ajouter'
           }`
         }}</span>
@@ -29,10 +43,19 @@ export default {
     return {
       units: 0,
       store: useCounterStore(),
+      isMobile: false,
     }
   },
-
+  mounted() {
+    this.checkDevice()
+  },
   methods: {
+    checkDevice() {
+      this.isMobile =
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          navigator.userAgent
+        )
+    },
     touchStart(touchEvent) {
       if (touchEvent.changedTouches.length !== 1) return
       const posXStart = touchEvent.changedTouches[0].clientX
