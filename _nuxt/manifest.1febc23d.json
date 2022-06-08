@@ -49,7 +49,7 @@
   "start_url": "/combiendeverres/?standalone=true",
   "display": "fullscreen",
   "background_color": "#3F3844",
-  "theme_color": "#eb5252",
+  "theme_color": "#283faf",
   "lang": "en",
   "Scope": "/",
   "orientation": "portrait"
