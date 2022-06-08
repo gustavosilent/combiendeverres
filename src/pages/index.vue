@@ -5,9 +5,10 @@
       class="justify-end flex flex-row h-14"
       @click="restoreRoute('/soiree')"
     >
-      <div class="p-1">
+      <div class="p-1 relative">
         <img class="m-auto w-8" src="argent.png" />
         <span class="text-xs font-medium">RECHARGER</span>
+        <NotificationIcon />
       </div>
     </div>
     <div v-else class="h-14"></div>
@@ -20,12 +21,15 @@
 <script>
 import { useCounterStore } from './../store/counter'
 import WelcomeScreen from './../components/WelcomeScreen'
+import NotificationIcon from './../components/Notification'
 
 export default {
   name: 'IndexPage',
   components: {
     WelcomeScreen,
+    NotificationIcon,
   },
+  transition: 'default',
   data() {
     return {
       store: useCounterStore(),

@@ -7,12 +7,12 @@
           >HOME</span
         ></NuxtLink
       >
-      <NuxtLink class="p-1" to="/total"
-        ><img class="m-auto w-8" src="argent.png" /><span
-          class="text-xs font-medium"
-          >PAYER {{ store.getCount }}</span
-        ></NuxtLink
-      >
+      <NuxtLink class="p-1 relative" to="/total"
+        ><img class="m-auto w-8" src="argent.png" />
+        <span class="text-xs font-medium"
+          >PAYER {{ store.getCount }}
+          <NotificationIcon v-if="store.getCount > 0" /></span
+      ></NuxtLink>
     </div>
     <div class="justify-center items-center">
       <OneMore />
@@ -23,14 +23,15 @@
 <script>
 import { useCounterStore } from './../store/counter'
 import OneMore from './../components/OneMore'
+import NotificationIcon from './../components/Notification'
 
 export default {
   name: 'SoireePage',
-
   components: {
     OneMore,
+    NotificationIcon,
   },
-
+  transition: 'default',
   data() {
     return {
       store: useCounterStore(),

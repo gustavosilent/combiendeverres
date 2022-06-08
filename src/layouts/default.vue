@@ -22,4 +22,19 @@ export default {
   bottom: 0;
   top: 0;
 }
+.default-enter-active {
+  animation-name: color;
+  animation-duration: 200ms;
+  animation-iteration-count: 1;
+}
+.default-enter {
+  @keyframes color {
+    0% {
+      background-color: #fff;
+    }
+    100% {
+      background-color: #283faf;
+    }
+  }
+}
 </style>

@@ -19,9 +19,9 @@ import LaAddition from './../components/LaAddition'
 
 export default {
   name: 'SoireePage',
-
   components: {
     LaAddition,
   },
+  transition: 'default',
 }
 </script>
