@@ -24,7 +24,7 @@ export default {
 }
 .default-leave-active {
   animation-name: fadeout;
-  animation-duration: 300ms;
+  animation-duration: 150ms;
   animation-iteration-count: 1;
 }
 .default-enter {
