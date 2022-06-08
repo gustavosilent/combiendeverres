@@ -22,18 +22,21 @@ export default {
   bottom: 0;
   top: 0;
 }
-.default-enter-active {
-  animation-name: color;
-  animation-duration: 200ms;
+.default-leave-active {
+  animation-name: fadeout;
+  animation-duration: 300ms;
   animation-iteration-count: 1;
 }
 .default-enter {
-  @keyframes color {
+  @keyframes fadeout {
     0% {
       background-color: #fff;
     }
-    100% {
+    50% {
       background-color: #283faf;
+    }
+    100% {
+      background-color: #fff;
     }
   }
 }
