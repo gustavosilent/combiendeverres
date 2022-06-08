@@ -7,7 +7,7 @@
           src="argent.png"
         />
         <h1 class="text-xl mt-4">
-          Tu doit payer {{ store.getCount }} verre(s)
+          Tu dois payer {{ store.getCount }} verre(s)
         </h1>
       </div>
     </div>
