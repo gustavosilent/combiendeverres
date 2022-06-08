@@ -1,7 +1,7 @@
 <template>
   <div class="text-center select-none">
     <div class="mb-4">
-      <div v-longpress="addValue" @touchstart="touchStart">
+      <div v-longpress="addValue" v-touch:swipe="swipeHandler">
         <img
           class="m-auto w-32 md:w-42 lg:w-48 pointer-events-none"
           src="cloche.png"
@@ -36,8 +36,11 @@
 </template>
 
 <script>
+import Vue from 'vue'
+import Vue2TouchEvents from 'vue2-touch-events'
 import { useCounterStore } from './../store/counter'
 
+Vue.use(Vue2TouchEvents)
 export default {
   name: 'OneMore',
 
@@ -58,19 +61,8 @@ export default {
           navigator.userAgent
         )
     },
-    touchStart(touchEvent) {
-      if (touchEvent.changedTouches.length !== 1) return
-      const posXStart = touchEvent.changedTouches[0].clientX
-      addEventListener(
-        'touchend',
-        (touchEvent) => this.touchEnd(touchEvent, posXStart),
-        { once: true }
-      )
-    },
-    touchEnd(touchEvent, posXStart) {
-      if (touchEvent.changedTouches.length !== 1) return
-      const posXEnd = touchEvent.changedTouches[0].clientX
-      this.units = posXStart < posXEnd ? this.units - 1 : this.units + 1
+    swipeHandler(e) {
+      this.units = e === 'left' ? this.units + 1 : this.units - 1
       window.navigator?.vibrate?.([10, 10])
       this.advanced = true
     },
