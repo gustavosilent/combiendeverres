@@ -76,7 +76,7 @@ export default {
       name: 'Combien de Verres',
       short_name: 'Apéro time!',
       description: 'Combien de verres ta bu ce soirée?',
-      theme_color: '#eb5252',
+      theme_color: '#283faf',
       background_color: '#3F3844',
       display: 'fullscreen',
       Scope: '/',
