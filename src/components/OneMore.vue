@@ -1,7 +1,11 @@
 <template>
   <div class="text-center select-none">
-    <div class="mb-4">
-      <div v-longpress="addValue" v-touch:swipe="swipeHandler">
+    <div
+      v-longpress="addValue"
+      v-touch:swipe="swipeHandler"
+      class="mb-4 extra-area"
+    >
+      <div>
         <img
           class="m-auto w-32 md:w-42 lg:w-48 pointer-events-none"
           src="cloche.png"
@@ -74,3 +78,8 @@ export default {
   },
 }
 </script>
+<style scoped>
+.extra-area {
+  padding: 6rem;
+}
+</style>
