@@ -70,11 +70,7 @@ export default {
     touchEnd(touchEvent, posXStart) {
       if (touchEvent.changedTouches.length !== 1) return
       const posXEnd = touchEvent.changedTouches[0].clientX
-      if (posXStart < posXEnd) {
-        this.units++
-      } else if (posXStart > posXEnd) {
-        this.units--
-      }
+      this.units = posXStart < posXEnd ? this.units - 1 : this.units + 1
       window.navigator?.vibrate?.([10, 10])
       this.advanced = true
     },
