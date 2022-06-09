@@ -1,5 +1,5 @@
 <template>
-  <div class="cdv-default-layout">
+  <div class="cdv-default-layout fixed top-0 bottom-0 left-0 right-0">
     <nuxt></nuxt>
   </div>
 </template>
