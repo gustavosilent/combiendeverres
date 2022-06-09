@@ -1,5 +1,5 @@
 <template>
-  <div class="cdv-default-layout fixed top-0 bottom-0 left-0 right-0">
+  <div class="cdv-default-layout absolute top-0 bottom-0 left-0 right-0">
     <nuxt></nuxt>
   </div>
 </template>
@@ -14,6 +14,11 @@ export default {
 </script>
 
 <style lang="scss">
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
 .cdv-default-layout {
   overflow: hidden;
   position: fixed;
