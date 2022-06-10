@@ -26,6 +26,7 @@ export default {
     startSection() {
       window.navigator?.vibrate?.([50, 200, 50, 200])
       this.store.emptyCount()
+      localStorage.session = 0
       this.$router.push({ path: '/soiree' })
     },
   },

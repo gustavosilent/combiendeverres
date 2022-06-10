@@ -5,10 +5,23 @@
 </template>
 
 <script>
+import { useCounterStore } from './../store/counter'
+
 export default {
   name: 'DefaultLayout',
+  data() {
+    return {
+      store: useCounterStore(),
+    }
+  },
   beforeMount() {
     window.CDV = window.CDV || {}
+
+    if (localStorage.session) {
+      this.store.addCount(localStorage.session)
+    } else {
+      localStorage.session = 0
+    }
   },
 }
 </script>

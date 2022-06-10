@@ -80,6 +80,7 @@ export default {
     addValue() {
       window.navigator?.vibrate?.([50, 200, 50, 200])
       this.store.addCount(this.units)
+      localStorage.session = this.store.getCount
       this.units = 0
     },
   },
