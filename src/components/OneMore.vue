@@ -1,40 +1,39 @@
 <template>
-  <div class="text-center select-none">
+  <div class="text-center select-none h-full">
     <div
       v-longpress="addValue"
-      v-touch:swipe="swipeHandler"
-      class="mb-4 extra-area"
+      v-touch:swipe="quandityHandler"
+      class="flex flex-col h-full justify-center mb-4"
     >
-      <div>
+      <div class="flex space-between">
+        <img
+          class="m-auto w-8 md:w-12 lg:w-18"
+          :class="{ 'opacity-25': isZero }"
+          src="arrow-l.png"
+          @click="quandityHandler('remove')"
+        />
         <img
           class="m-auto w-32 md:w-42 lg:w-48 pointer-events-none"
           src="cloche.png"
         />
-        <div class="flex mt-4 justify-center">
-          <div class="flex items-center text-xl">
-            <h1 class="text-2xl">{{ units }} verre(s)</h1>
-            <span
-              v-if="!isMobile"
-              class="bg-white border border-gray-400 rounded leading-none ml-2 w-6 h-6"
-              @click="units--"
-              >-</span
-            >
-            <span
-              v-if="!isMobile"
-              class="bg-white border border-gray-400 rounded leading-none ml-2 w-6 h-6"
-              @click="units++"
-              >+</span
-            >
-          </div>
-        </div>
-        <span class="text-xs mt-4 text-gray-400">{{
-          `${
-            units === 0
-              ? `${isMobile ? 'Swipe(L/R)' : 'Click'} pour adjuster`
-              : 'LongPress(.) pour ajouter'
-          }`
-        }}</span>
+        <img
+          class="m-auto w-8 md:w-12 lg:w-18"
+          src="arrow-r.png"
+          @click="quandityHandler('add')"
+        />
       </div>
+      <div class="flex mt-4 justify-center">
+        <div class="flex items-center text-xl">
+          <h1 class="text-2xl">{{ units }} verre(s)</h1>
+        </div>
+      </div>
+      <span class="text-xs mt-4 text-gray-400">{{
+        `${
+          units === 0
+            ? `${isMobile ? 'Swipe(L/R)' : 'Click'} pour adjuster`
+            : 'LongPress(.) pour ajouter'
+        }`
+      }}</span>
     </div>
   </div>
 </template>
@@ -55,6 +54,11 @@ export default {
       isMobile: false,
     }
   },
+  computed: {
+    isZero() {
+      return this.store.getCount + this.units === 0
+    },
+  },
   mounted() {
     this.checkDevice()
   },
@@ -65,8 +69,11 @@ export default {
           navigator.userAgent
         )
     },
-    swipeHandler(e) {
-      this.units = e === 'left' ? this.units + 1 : this.units - 1
+    quandityHandler(e) {
+      const add = ['right', 'top', 'add']
+      const remove = ['left', 'botton', 'remove']
+      if (remove.includes(e) && this.isZero) return
+      this.units = add.includes(e) ? this.units + 1 : this.units - 1
       window.navigator?.vibrate?.([10, 10])
       this.advanced = true
     },
