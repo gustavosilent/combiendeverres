@@ -31,6 +31,7 @@ html,
 body {
   height: 100%;
   overflow: hidden;
+  touch-action: none;
 }
 .cdv-default-layout {
   overflow: hidden;
