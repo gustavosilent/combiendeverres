@@ -18,7 +18,7 @@ export default {
     window.CDV = window.CDV || {}
 
     if (localStorage.session) {
-      this.store.addCount(localStorage.session)
+      this.store.addCount(Number(localStorage.session))
     } else {
       localStorage.session = 0
     }
