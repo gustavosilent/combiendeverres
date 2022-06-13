@@ -6,7 +6,7 @@
       @click="restoreRoute('/soiree')"
     >
       <div class="p-1 relative">
-        <img class="m-auto w-8" src="argent.png" />
+        <img class="m-auto w-8" src="argent.png" alt="Argent icon" />
         <span class="text-xs font-medium">RECHARGER</span>
         <NotificationIcon />
       </div>

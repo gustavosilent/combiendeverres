@@ -13,6 +13,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
+    htmlAttrs: { lang: 'fr' },
     title: 'Combien de Verres?',
     meta: [
       { charset: 'utf-8' },
@@ -80,7 +81,7 @@ export default {
       author: 'Gustavo Silent',
     },
     manifest: {
-      lang: 'en',
+      lang: 'fr',
       name: 'Combien de Verres',
       short_name: 'Apéro time!',
       description: 'Combien de verres ta bu ce soirée?',

@@ -10,15 +10,18 @@
           class="m-auto w-8 md:w-12 lg:w-18"
           :class="{ 'opacity-25': isZero }"
           src="arrow-l.png"
+          alt="Arrow left icon"
           @click="quandityHandler('remove')"
         />
         <img
           class="m-auto w-32 md:w-42 lg:w-48 pointer-events-none"
           src="cloche.png"
+          alt="Cloche icon"
         />
         <img
           class="m-auto w-8 md:w-12 lg:w-18"
           src="arrow-r.png"
+          alt="Arrow right icon"
           @click="quandityHandler('add')"
         />
       </div>
